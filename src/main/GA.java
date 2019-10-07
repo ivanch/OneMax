@@ -21,8 +21,6 @@ public class GA {
 	
     public Integer genMax = 1000; // Maximum generations. 
     
-    public GA(){ }
-
     public void run(){
         initPop(); // Initialize population
         
@@ -42,7 +40,8 @@ public class GA {
 			Integer bs = score(ind[best]);
 			System.out.println("> Gen: " + gen);
 			System.out.print("> Best score: " + bs + "\n");
-			if(bs == genes) { // If the one max individual was born.
+            
+            if(bs.equals(genes)) { // If the one max individual was born.
 				System.out.print("");
 				for(Integer i = 0; i < genes; i++) System.out.print(ind[best][i] + " "); // PrInteger all the genes.
 				break; // Stop the generation loop.
